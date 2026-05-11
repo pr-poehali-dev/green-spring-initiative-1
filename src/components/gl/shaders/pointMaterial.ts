@@ -115,7 +115,8 @@ export class DofPointsMaterial extends THREE.ShaderMaterial {
 
         float alpha = (1.04 - clamp(vDistance, 0.0, 1.0)) * clamp(smoothstep(-0.5, 0.25, vPosY), 0.0, 1.0) * uOpacity * revealMask * uRevealProgress * sparkleBrightness;
 
-        gl_FragColor = vec4(vec3(1.0), mix(alpha, sparkleBrightness - 1.1, uTransition));
+        vec3 purpleColor = mix(vec3(0.55, 0.2, 0.95), vec3(0.85, 0.6, 1.0), clamp(sparkleBrightness - 0.7, 0.0, 1.0));
+        gl_FragColor = vec4(purpleColor, mix(alpha, sparkleBrightness - 1.1, uTransition));
       }`,
       uniforms: {
         positions: { value: null },
