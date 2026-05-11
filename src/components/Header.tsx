@@ -42,6 +42,12 @@ export const Header = () => {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={toggle}
+              className="text-white/40 hover:text-white text-xs font-mono border border-white/15 hover:border-white/30 rounded-md px-2 py-1 transition-all duration-150"
+            >
+              {lang === "en" ? "RU" : "EN"}
+            </button>
             <a
               href="#register"
               className="text-white/50 hover:text-white text-sm transition-colors"
@@ -54,12 +60,6 @@ export const Header = () => {
             >
               {t("Sign Up", "Регистрация")}
             </a>
-            <button
-              onClick={toggle}
-              className="text-white/40 hover:text-white text-xs font-mono border border-white/15 hover:border-white/30 rounded-md px-2 py-1 transition-all duration-150"
-            >
-              {lang === "en" ? "RU" : "EN"}
-            </button>
           </div>
 
           <MobileMenu />
