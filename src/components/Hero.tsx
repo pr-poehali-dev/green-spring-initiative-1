@@ -53,37 +53,27 @@ export function Hero() {
 
       <Header />
 
-      {/* Cheat menu mockup — right side */}
-      <div className="absolute right-6 xl:right-14 top-1/2 -translate-y-1/2 z-5 hidden xl:flex flex-col gap-4 pointer-events-none select-none">
-        {/* In-game screenshot */}
-        <div className="w-72 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(139,92,246,0.4)", boxShadow: "0 0 30px rgba(139,92,246,0.2)" }}>
-          <img
-            src="https://cdn.poehali.dev/projects/071d713c-f90d-4514-8abd-97748d70b0d1/files/89d0c8fb-5621-41ce-98e6-02bbe1c424d9.jpg"
-            alt="CS2 cheat in action"
-            className="w-full h-36 object-cover"
-            style={{ opacity: 0.75 }}
-          />
-        </div>
-        {/* Cheat menu */}
-        <div className="w-72 rounded-xl overflow-hidden" style={{ background: "rgba(10,3,22,0.92)", border: "1px solid rgba(139,92,246,0.5)", boxShadow: "0 0 50px rgba(139,92,246,0.25), inset 0 0 30px rgba(139,92,246,0.04)" }}>
+      {/* LEFT — Cheat menu */}
+      <div className="absolute left-6 xl:left-14 top-1/2 -translate-y-1/2 z-5 hidden xl:block pointer-events-none select-none">
+        <div className="w-64 rounded-xl overflow-hidden" style={{ background: "rgba(8,2,18,0.95)", border: "1px solid rgba(139,92,246,0.55)", boxShadow: "0 0 60px rgba(139,92,246,0.3), inset 0 0 40px rgba(139,92,246,0.05)" }}>
           {/* Title bar */}
-          <div className="flex items-center justify-between px-4 py-3" style={{ background: "rgba(139,92,246,0.25)", borderBottom: "1px solid rgba(139,92,246,0.3)" }}>
-            <span className="text-violet-200 text-xs font-bold tracking-widest uppercase">Boberhook</span>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: "linear-gradient(90deg, rgba(109,40,217,0.4), rgba(139,92,246,0.2))", borderBottom: "1px solid rgba(139,92,246,0.35)" }}>
+            <span className="text-white text-xs font-bold tracking-widest uppercase">Boberhook</span>
             <div className="flex gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-violet-400" />
-              <span className="w-2.5 h-2.5 rounded-full bg-purple-500/60" />
+              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#a78bfa", boxShadow: "0 0 6px #a78bfa" }} />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
             </div>
           </div>
           {/* Tabs */}
-          <div className="flex text-[10px] font-mono uppercase tracking-wider" style={{ borderBottom: "1px solid rgba(139,92,246,0.25)" }}>
+          <div className="flex text-[10px] font-mono uppercase tracking-wider" style={{ borderBottom: "1px solid rgba(139,92,246,0.2)", background: "rgba(0,0,0,0.3)" }}>
             {["Aimbot", "ESP", "Trigger", "Misc"].map((tab, i) => (
-              <div key={tab} className="flex-1 text-center py-2" style={{ color: i === 0 ? "rgba(196,167,255,1)" : "rgba(139,92,246,0.55)", borderBottom: i === 0 ? "2px solid rgba(167,139,250,0.9)" : "none" }}>
+              <div key={tab} className="flex-1 text-center py-2.5" style={{ color: i === 0 ? "#c4b5fd" : "rgba(139,92,246,0.5)", borderBottom: i === 0 ? "2px solid #a78bfa" : "2px solid transparent" }}>
                 {tab}
               </div>
             ))}
           </div>
           {/* Items */}
-          <div className="p-3.5 space-y-3">
+          <div className="px-4 py-3 space-y-3">
             {[
               { label: "Enable Aimbot", on: true },
               { label: "FOV", value: "8.5" },
@@ -93,32 +83,48 @@ export function Hero() {
               { label: "Auto Shoot", on: true },
             ].map((item) => (
               <div key={item.label} className="flex items-center justify-between">
-                <span className="text-[12px] text-white/80 font-mono">{item.label}</span>
+                <span className="text-[12px] text-white/85 font-mono">{item.label}</span>
                 {"on" in item ? (
-                  <div className="w-9 h-4.5 rounded-full flex items-center px-0.5" style={{ background: item.on ? "rgba(139,92,246,0.9)" : "rgba(255,255,255,0.12)", height: "18px", width: "36px" }}>
-                    <div className="w-3.5 h-3.5 rounded-full bg-white shadow-sm" style={{ marginLeft: item.on ? "auto" : "0", width: "14px", height: "14px" }} />
+                  <div style={{ background: item.on ? "rgba(139,92,246,0.95)" : "rgba(255,255,255,0.1)", boxShadow: item.on ? "0 0 8px rgba(139,92,246,0.6)" : "none", height: "18px", width: "36px", borderRadius: "9px", display: "flex", alignItems: "center", padding: "2px" }}>
+                    <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "white", marginLeft: item.on ? "auto" : "0" }} />
                   </div>
                 ) : (
-                  <span className="text-[12px] text-violet-300 font-mono font-semibold">{item.value}</span>
+                  <span className="text-[12px] font-mono font-bold" style={{ color: "#c4b5fd" }}>{item.value}</span>
                 )}
               </div>
             ))}
             {/* Slider */}
             <div className="pt-1">
               <div className="flex justify-between mb-1.5">
-                <span className="text-[11px] text-white/50 font-mono">RCS Power</span>
-                <span className="text-[11px] text-violet-300 font-mono font-semibold">72%</span>
+                <span className="text-[11px] text-white/45 font-mono">RCS Power</span>
+                <span className="text-[11px] font-mono font-bold" style={{ color: "#c4b5fd" }}>72%</span>
               </div>
-              <div className="w-full h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="h-1.5 rounded-full" style={{ width: "72%", background: "linear-gradient(90deg, #7c3aed, #c4b5fd)" }} />
+              <div className="w-full rounded-full" style={{ height: "5px", background: "rgba(255,255,255,0.07)" }}>
+                <div className="rounded-full" style={{ width: "72%", height: "5px", background: "linear-gradient(90deg, #6d28d9, #c4b5fd)", boxShadow: "0 0 8px rgba(167,139,250,0.5)" }} />
               </div>
             </div>
           </div>
           {/* Footer */}
-          <div className="px-3.5 pb-3.5">
-            <div className="rounded-lg py-2 text-center text-[11px] font-mono text-violet-300 tracking-widest font-semibold" style={{ background: "rgba(139,92,246,0.18)", border: "1px solid rgba(139,92,246,0.35)" }}>
+          <div className="px-4 pb-4">
+            <div className="rounded-lg py-2 text-center text-[11px] font-mono font-semibold tracking-widest" style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.4)", color: "#a78bfa", boxShadow: "inset 0 0 10px rgba(139,92,246,0.1)" }}>
               UNDETECTED · v2.4.1
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT — In-game screenshot */}
+      <div className="absolute right-6 xl:right-14 top-1/2 -translate-y-1/2 z-5 hidden xl:block pointer-events-none select-none">
+        <div className="w-80 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(139,92,246,0.45)", boxShadow: "0 0 60px rgba(139,92,246,0.25)" }}>
+          <img
+            src="https://cdn.poehali.dev/projects/071d713c-f90d-4514-8abd-97748d70b0d1/files/e8556868-153e-4e8b-ad6d-493573e47471.jpg"
+            alt="ESP / Wallhack in CS2"
+            className="w-full object-cover"
+            style={{ display: "block", opacity: 0.88 }}
+          />
+          <div className="px-3 py-2 flex items-center gap-2" style={{ background: "rgba(8,2,18,0.95)", borderTop: "1px solid rgba(139,92,246,0.25)" }}>
+            <span className="w-2 h-2 rounded-full" style={{ background: "#a78bfa", boxShadow: "0 0 6px #a78bfa", flexShrink: 0 }} />
+            <span className="text-[11px] font-mono text-white/60 tracking-wide">ESP / Wallhack · Live demo</span>
           </div>
         </div>
       </div>
