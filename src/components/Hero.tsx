@@ -13,34 +13,36 @@ export function Hero() {
       <Header />
 
       <div className="pb-16 mt-auto text-center relative">
-        <Pill className="mb-6">БЕТА-ВЕРСИЯ</Pill>
+        <Pill className="mb-6">CS2 · UNDETECTED</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
-          Раскройте ваш <br />
-          <i className="font-light">будущий</i> потенциал
+          Играй на <br />
+          <i className="font-light">другом</i> уровне
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[440px] mx-auto">
-          Через стратегии постоянного инвестирования, превосходящие рынок
+          Продвинутый чит для CS2 с простой установкой через лоадер. Безопасно, стабильно, незаметно.
         </p>
 
-        <a className="contents max-sm:hidden" href="#contact">
-          <Button
-            className="mt-14"
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-          >
-            [Связаться с нами]
-          </Button>
-        </a>
-        <a className="contents sm:hidden" href="#contact">
-          <Button
-            size="sm"
-            className="mt-14"
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-          >
-            [Связаться с нами]
-          </Button>
-        </a>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-14">
+          <a href="#pricing">
+            <Button
+              className="w-48"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              [Купить доступ]
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button
+              variant="outline"
+              className="w-48 border-foreground/20 text-foreground/60 hover:text-foreground hover:border-foreground/60"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              [Связаться с нами]
+            </Button>
+          </a>
+        </div>
       </div>
     </div>
   );
