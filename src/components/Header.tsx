@@ -24,7 +24,7 @@ export const Header = () => {
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center">
               <Icon name="Crosshair" size={14} className="text-white" />
             </div>
-            <span className="text-white font-bold text-sm tracking-wide">CS2CHEAT</span>
+            <span className="text-white font-bold text-sm tracking-wide">Boberhook</span>
           </a>
 
           {/* Nav */}
