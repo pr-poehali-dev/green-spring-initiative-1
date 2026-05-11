@@ -62,14 +62,11 @@ export function Hero() {
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 max-w-4xl">
-          Играй на{" "}
           <span
             className="bg-gradient-to-r from-violet-300 via-purple-400 to-violet-600 bg-clip-text text-transparent"
           >
-            другом
+            CS2 Cheat
           </span>
-          <br />
-          уровне
         </h1>
 
         <p className="text-white/40 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
