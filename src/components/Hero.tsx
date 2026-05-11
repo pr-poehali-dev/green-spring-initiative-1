@@ -53,13 +53,6 @@ export function Hero() {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24 pb-20">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/25 rounded-full px-4 py-1.5 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-          <span className="text-violet-300 text-xs font-mono uppercase tracking-widest">
-            CS2 · Undetected · Обновлено сегодня
-          </span>
-        </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 max-w-4xl">
           <span
