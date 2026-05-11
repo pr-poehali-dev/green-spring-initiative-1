@@ -69,11 +69,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="text-white/40 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          Продвинутый чит для CS2 с простой установкой через лоадер.
-          <br />
-          Безопасно, стабильно, незаметно.
-        </p>
+        <div className="mb-10" />
 
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <a
