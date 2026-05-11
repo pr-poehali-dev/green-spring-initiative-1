@@ -86,13 +86,13 @@ export function Hero() {
         {/* Mini stats */}
         <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
           {[
-            { icon: "Users", label: "50K+ пользователей" },
-            { icon: "Shield", label: "0 банов" },
-            { icon: "RefreshCw", label: "Обновления 24/7" },
+            { icon: "Users", en: "50K+ users", ru: "50K+ пользователей" },
+            { icon: "Shield", en: "0 bans", ru: "0 банов" },
+            { icon: "RefreshCw", en: "Updates 24/7", ru: "Обновления 24/7" },
           ].map((s) => (
-            <div key={s.label} className="flex items-center gap-2 text-white/30 text-sm">
+            <div key={s.en} className="flex items-center gap-2 text-white/30 text-sm">
               <Icon name={s.icon} size={14} className="text-violet-500" />
-              {s.label}
+              {t(s.en, s.ru)}
             </div>
           ))}
         </div>
