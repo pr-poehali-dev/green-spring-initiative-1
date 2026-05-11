@@ -54,26 +54,26 @@ export function Hero() {
       <Header />
 
       {/* LEFT — Cheat menu */}
-      <div className="absolute left-6 xl:left-14 top-1/2 -translate-y-1/2 z-5 hidden xl:block pointer-events-none select-none">
-        <div className="w-64 rounded-xl overflow-hidden" style={{ background: "rgba(8,2,18,0.95)", border: "1px solid rgba(139,92,246,0.55)", boxShadow: "0 0 60px rgba(139,92,246,0.3), inset 0 0 40px rgba(139,92,246,0.05)" }}>
+      <div className="absolute left-0 xl:-left-6 top-1/2 -translate-y-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(-6deg)", transformOrigin: "center center" }}>
+        <div className="w-80 rounded-2xl overflow-hidden" style={{ background: "rgba(8,2,18,0.97)", border: "1px solid rgba(139,92,246,0.6)", boxShadow: "0 0 80px rgba(139,92,246,0.4), 0 30px 60px rgba(0,0,0,0.6), inset 0 0 40px rgba(139,92,246,0.06)" }}>
           {/* Title bar */}
-          <div className="flex items-center justify-between px-4 py-3" style={{ background: "linear-gradient(90deg, rgba(109,40,217,0.4), rgba(139,92,246,0.2))", borderBottom: "1px solid rgba(139,92,246,0.35)" }}>
-            <span className="text-white text-xs font-bold tracking-widest uppercase">Boberhook</span>
-            <div className="flex gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#a78bfa", boxShadow: "0 0 6px #a78bfa" }} />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+          <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "linear-gradient(90deg, rgba(109,40,217,0.5), rgba(139,92,246,0.25))", borderBottom: "1px solid rgba(139,92,246,0.4)" }}>
+            <span className="text-white text-sm font-bold tracking-widest uppercase">Boberhook</span>
+            <div className="flex gap-2">
+              <span className="w-3 h-3 rounded-full" style={{ background: "#a78bfa", boxShadow: "0 0 8px #a78bfa" }} />
+              <span className="w-3 h-3 rounded-full bg-white/20" />
             </div>
           </div>
           {/* Tabs */}
-          <div className="flex text-[10px] font-mono uppercase tracking-wider" style={{ borderBottom: "1px solid rgba(139,92,246,0.2)", background: "rgba(0,0,0,0.3)" }}>
+          <div className="flex text-[11px] font-mono uppercase tracking-wider" style={{ borderBottom: "1px solid rgba(139,92,246,0.2)", background: "rgba(0,0,0,0.35)" }}>
             {["Aimbot", "ESP", "Trigger", "Misc"].map((tab, i) => (
-              <div key={tab} className="flex-1 text-center py-2.5" style={{ color: i === 0 ? "#c4b5fd" : "rgba(139,92,246,0.5)", borderBottom: i === 0 ? "2px solid #a78bfa" : "2px solid transparent" }}>
+              <div key={tab} className="flex-1 text-center py-3" style={{ color: i === 0 ? "#c4b5fd" : "rgba(139,92,246,0.5)", borderBottom: i === 0 ? "2px solid #a78bfa" : "2px solid transparent" }}>
                 {tab}
               </div>
             ))}
           </div>
           {/* Items */}
-          <div className="px-4 py-3 space-y-3">
+          <div className="px-5 py-4 space-y-3.5">
             {[
               { label: "Enable Aimbot", on: true },
               { label: "FOV", value: "8.5" },
@@ -83,30 +83,30 @@ export function Hero() {
               { label: "Auto Shoot", on: true },
             ].map((item) => (
               <div key={item.label} className="flex items-center justify-between">
-                <span className="text-[12px] text-white/85 font-mono">{item.label}</span>
+                <span className="font-mono" style={{ fontSize: "13px", color: "rgba(255,255,255,0.88)" }}>{item.label}</span>
                 {"on" in item ? (
-                  <div style={{ background: item.on ? "rgba(139,92,246,0.95)" : "rgba(255,255,255,0.1)", boxShadow: item.on ? "0 0 8px rgba(139,92,246,0.6)" : "none", height: "18px", width: "36px", borderRadius: "9px", display: "flex", alignItems: "center", padding: "2px" }}>
-                    <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "white", marginLeft: item.on ? "auto" : "0" }} />
+                  <div style={{ background: item.on ? "rgba(139,92,246,0.95)" : "rgba(255,255,255,0.1)", boxShadow: item.on ? "0 0 10px rgba(139,92,246,0.7)" : "none", height: "22px", width: "42px", borderRadius: "11px", display: "flex", alignItems: "center", padding: "3px" }}>
+                    <div style={{ width: "16px", height: "16px", borderRadius: "50%", background: "white", marginLeft: item.on ? "auto" : "0", boxShadow: "0 1px 4px rgba(0,0,0,0.4)" }} />
                   </div>
                 ) : (
-                  <span className="text-[12px] font-mono font-bold" style={{ color: "#c4b5fd" }}>{item.value}</span>
+                  <span className="font-mono font-bold" style={{ fontSize: "13px", color: "#c4b5fd" }}>{item.value}</span>
                 )}
               </div>
             ))}
             {/* Slider */}
             <div className="pt-1">
-              <div className="flex justify-between mb-1.5">
-                <span className="text-[11px] text-white/45 font-mono">RCS Power</span>
-                <span className="text-[11px] font-mono font-bold" style={{ color: "#c4b5fd" }}>72%</span>
+              <div className="flex justify-between mb-2">
+                <span className="font-mono" style={{ fontSize: "12px", color: "rgba(255,255,255,0.45)" }}>RCS Power</span>
+                <span className="font-mono font-bold" style={{ fontSize: "12px", color: "#c4b5fd" }}>72%</span>
               </div>
-              <div className="w-full rounded-full" style={{ height: "5px", background: "rgba(255,255,255,0.07)" }}>
-                <div className="rounded-full" style={{ width: "72%", height: "5px", background: "linear-gradient(90deg, #6d28d9, #c4b5fd)", boxShadow: "0 0 8px rgba(167,139,250,0.5)" }} />
+              <div className="w-full rounded-full" style={{ height: "6px", background: "rgba(255,255,255,0.07)" }}>
+                <div className="rounded-full" style={{ width: "72%", height: "6px", background: "linear-gradient(90deg, #6d28d9, #c4b5fd)", boxShadow: "0 0 10px rgba(167,139,250,0.6)" }} />
               </div>
             </div>
           </div>
           {/* Footer */}
-          <div className="px-4 pb-4">
-            <div className="rounded-lg py-2 text-center text-[11px] font-mono font-semibold tracking-widest" style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.4)", color: "#a78bfa", boxShadow: "inset 0 0 10px rgba(139,92,246,0.1)" }}>
+          <div className="px-5 pb-5">
+            <div className="rounded-xl py-2.5 text-center font-mono font-semibold tracking-widest" style={{ fontSize: "12px", background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.45)", color: "#a78bfa", boxShadow: "inset 0 0 14px rgba(139,92,246,0.12)" }}>
               UNDETECTED · v2.4.1
             </div>
           </div>
@@ -114,17 +114,17 @@ export function Hero() {
       </div>
 
       {/* RIGHT — In-game screenshot */}
-      <div className="absolute right-6 xl:right-14 top-1/2 -translate-y-1/2 z-5 hidden xl:block pointer-events-none select-none">
-        <div className="w-80 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(139,92,246,0.45)", boxShadow: "0 0 60px rgba(139,92,246,0.25)" }}>
+      <div className="absolute right-0 xl:-right-6 top-1/2 -translate-y-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(5deg)", transformOrigin: "center center" }}>
+        <div className="w-96 rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(139,92,246,0.5)", boxShadow: "0 0 80px rgba(139,92,246,0.3), 0 30px 60px rgba(0,0,0,0.6)" }}>
           <img
             src="https://cdn.poehali.dev/projects/071d713c-f90d-4514-8abd-97748d70b0d1/files/e8556868-153e-4e8b-ad6d-493573e47471.jpg"
             alt="ESP / Wallhack in CS2"
             className="w-full object-cover"
-            style={{ display: "block", opacity: 0.88 }}
+            style={{ display: "block", opacity: 0.9 }}
           />
-          <div className="px-3 py-2 flex items-center gap-2" style={{ background: "rgba(8,2,18,0.95)", borderTop: "1px solid rgba(139,92,246,0.25)" }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: "#a78bfa", boxShadow: "0 0 6px #a78bfa", flexShrink: 0 }} />
-            <span className="text-[11px] font-mono text-white/60 tracking-wide">ESP / Wallhack · Live demo</span>
+          <div className="px-4 py-2.5 flex items-center gap-2" style={{ background: "rgba(8,2,18,0.97)", borderTop: "1px solid rgba(139,92,246,0.3)" }}>
+            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#a78bfa", boxShadow: "0 0 8px #a78bfa" }} />
+            <span className="font-mono tracking-wide" style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>ESP / Wallhack · Live demo</span>
           </div>
         </div>
       </div>
