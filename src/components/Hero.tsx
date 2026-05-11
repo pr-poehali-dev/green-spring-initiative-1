@@ -65,7 +65,7 @@ export function Hero() {
           <span
             className="bg-gradient-to-r from-violet-300 via-purple-400 to-violet-600 bg-clip-text text-transparent"
           >
-            CS2 Cheat
+            Boberhook
           </span>
         </h1>
 
