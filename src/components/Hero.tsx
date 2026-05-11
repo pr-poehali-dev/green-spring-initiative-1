@@ -53,6 +53,66 @@ export function Hero() {
 
       <Header />
 
+      {/* Cheat menu mockup — right side */}
+      <div className="absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 z-5 hidden xl:block pointer-events-none select-none" style={{ opacity: 0.18 }}>
+        <div className="w-64 rounded-xl overflow-hidden" style={{ background: "rgba(15,5,30,0.95)", border: "1px solid rgba(139,92,246,0.35)", boxShadow: "0 0 40px rgba(139,92,246,0.15)" }}>
+          {/* Title bar */}
+          <div className="flex items-center justify-between px-4 py-2.5" style={{ background: "rgba(139,92,246,0.2)", borderBottom: "1px solid rgba(139,92,246,0.25)" }}>
+            <span className="text-violet-300 text-xs font-bold tracking-widest uppercase">Boberhook</span>
+            <div className="flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-violet-500/60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-purple-500/40" />
+            </div>
+          </div>
+          {/* Tabs */}
+          <div className="flex text-[10px] font-mono uppercase tracking-wider" style={{ borderBottom: "1px solid rgba(139,92,246,0.2)" }}>
+            {["Aimbot", "ESP", "Trigger", "Misc"].map((tab, i) => (
+              <div key={tab} className="flex-1 text-center py-2" style={{ color: i === 0 ? "rgba(167,139,250,1)" : "rgba(139,92,246,0.4)", borderBottom: i === 0 ? "1px solid rgba(167,139,250,0.8)" : "none" }}>
+                {tab}
+              </div>
+            ))}
+          </div>
+          {/* Items */}
+          <div className="p-3 space-y-2.5">
+            {[
+              { label: "Enable Aimbot", on: true },
+              { label: "FOV", value: "8.5" },
+              { label: "Smoothness", value: "3.2" },
+              { label: "Bone", value: "Head" },
+              { label: "Silent Aim", on: false },
+              { label: "Auto Shoot", on: true },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center justify-between">
+                <span className="text-[11px] text-white/70 font-mono">{item.label}</span>
+                {"on" in item ? (
+                  <div className="w-8 h-4 rounded-full flex items-center px-0.5" style={{ background: item.on ? "rgba(139,92,246,0.8)" : "rgba(255,255,255,0.1)" }}>
+                    <div className="w-3 h-3 rounded-full bg-white" style={{ marginLeft: item.on ? "auto" : "0" }} />
+                  </div>
+                ) : (
+                  <span className="text-[11px] text-violet-400 font-mono">{item.value}</span>
+                )}
+              </div>
+            ))}
+            {/* Slider */}
+            <div className="pt-1">
+              <div className="flex justify-between mb-1">
+                <span className="text-[10px] text-white/40 font-mono">RCS Power</span>
+                <span className="text-[10px] text-violet-400 font-mono">72%</span>
+              </div>
+              <div className="w-full h-1 rounded-full" style={{ background: "rgba(255,255,255,0.1)" }}>
+                <div className="h-1 rounded-full" style={{ width: "72%", background: "linear-gradient(90deg, #7c3aed, #a78bfa)" }} />
+              </div>
+            </div>
+          </div>
+          {/* Footer */}
+          <div className="px-3 pb-3">
+            <div className="rounded-lg py-1.5 text-center text-[10px] font-mono text-violet-400 tracking-wider" style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.2)" }}>
+              UNDETECTED · v2.4.1
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24 pb-20">
 
