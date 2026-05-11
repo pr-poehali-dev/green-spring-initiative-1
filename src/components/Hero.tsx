@@ -54,8 +54,8 @@ export function Hero() {
       <Header />
 
       {/* LEFT — Cheat menu */}
-      <div className="absolute left-0 xl:-left-6 top-1/2 -translate-y-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(-6deg)", transformOrigin: "center center" }}>
-        <div className="w-80 rounded-2xl overflow-hidden" style={{ background: "rgba(8,2,18,0.97)", border: "1px solid rgba(139,92,246,0.6)", boxShadow: "0 0 80px rgba(139,92,246,0.4), 0 30px 60px rgba(0,0,0,0.6), inset 0 0 40px rgba(139,92,246,0.06)" }}>
+      <div className="absolute left-16 xl:left-24 top-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(-6deg)", transformOrigin: "center center" }}>
+        <div className="w-96 rounded-2xl overflow-hidden" style={{ background: "rgba(8,2,18,0.97)", border: "1px solid rgba(139,92,246,0.6)", boxShadow: "0 0 80px rgba(139,92,246,0.4), 0 30px 60px rgba(0,0,0,0.6), inset 0 0 40px rgba(139,92,246,0.06)" }}>
           {/* Title bar */}
           <div className="flex items-center justify-between px-5 py-3.5" style={{ background: "linear-gradient(90deg, rgba(109,40,217,0.5), rgba(139,92,246,0.25))", borderBottom: "1px solid rgba(139,92,246,0.4)" }}>
             <span className="text-white text-sm font-bold tracking-widest uppercase">Boberhook</span>
@@ -114,8 +114,8 @@ export function Hero() {
       </div>
 
       {/* RIGHT — In-game screenshot */}
-      <div className="absolute right-0 xl:-right-6 top-1/2 -translate-y-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(5deg)", transformOrigin: "center center" }}>
-        <div className="w-96 rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(139,92,246,0.5)", boxShadow: "0 0 80px rgba(139,92,246,0.3), 0 30px 60px rgba(0,0,0,0.6)" }}>
+      <div className="absolute right-16 xl:right-24 top-1/2 z-20 hidden xl:block pointer-events-none select-none" style={{ transform: "translateY(-50%) rotate(5deg)", transformOrigin: "center center" }}>
+        <div className="rounded-2xl overflow-hidden" style={{ width: "420px", border: "1px solid rgba(139,92,246,0.5)", boxShadow: "0 0 80px rgba(139,92,246,0.3), 0 30px 60px rgba(0,0,0,0.6)" }}>
           <img
             src="https://cdn.poehali.dev/projects/071d713c-f90d-4514-8abd-97748d70b0d1/files/e8556868-153e-4e8b-ad6d-493573e47471.jpg"
             alt="ESP / Wallhack in CS2"
