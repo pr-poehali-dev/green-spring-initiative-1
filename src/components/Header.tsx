@@ -1,37 +1,59 @@
-import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
+import Icon from "./ui/icon";
 
 export const Header = () => {
   return (
-    <div className="fixed z-50 pt-8 md:pt-14 top-0 left-0 w-full">
-      <header className="flex items-center justify-between container">
-        <a href="/">
-          <Logo className="w-[100px] md:w-[120px]" />
-        </a>
-        <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-10">
-          {[
-            { label: "Функции", href: "#features" },
-            { label: "Цены", href: "#pricing" },
-            { label: "FAQ", href: "#faq" },
-            { label: "Контакты", href: "#contact" },
-          ].map((item) => (
-            <a
-              className="uppercase inline-block font-mono text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out"
-              href={item.href}
-              key={item.label}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          className="uppercase max-lg:hidden transition-colors ease-out duration-150 font-mono text-primary hover:text-primary/80"
-          href="#register"
+    <div className="fixed z-50 top-0 left-0 w-full">
+      <div className="mx-auto px-4 md:px-8 lg:px-12 py-4">
+        <header
+          className="flex items-center justify-between rounded-2xl border border-white/8 px-5 py-3"
+          style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(16px)" }}
         >
-          Войти / Регистрация
-        </a>
-        <MobileMenu />
-      </header>
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center">
+              <Icon name="Crosshair" size={14} className="text-white" />
+            </div>
+            <span className="text-white font-bold text-sm tracking-wide">CS2CHEAT</span>
+          </a>
+
+          {/* Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {[
+              { label: "Функции", href: "#features" },
+              { label: "Цены", href: "#pricing" },
+              { label: "Установка", href: "#how" },
+              { label: "Контакты", href: "#contact" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-white/50 hover:text-white text-sm transition-colors duration-150"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="#register"
+              className="text-white/50 hover:text-white text-sm transition-colors"
+            >
+              Войти
+            </a>
+            <a
+              href="#register"
+              className="bg-gradient-to-r from-violet-500 to-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Регистрация
+            </a>
+          </div>
+
+          <MobileMenu />
+        </header>
+      </div>
     </div>
   );
 };
