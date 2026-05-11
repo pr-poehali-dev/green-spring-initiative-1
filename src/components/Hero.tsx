@@ -1,7 +1,9 @@
 import { Header } from "./Header";
 import Icon from "./ui/icon";
+import { useLang } from "@/context/LanguageContext";
 
 export function Hero() {
+  const { t } = useLang();
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Static purple gradient bg */}
@@ -70,14 +72,14 @@ export function Hero() {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold px-8 py-3.5 rounded-xl hover:opacity-90 transition-opacity text-sm"
           >
             <Icon name="ShoppingCart" size={16} />
-            Купить доступ
+            {t("Buy Access", "Купить доступ")}
           </a>
           <a
             href="#features"
             className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white/70 font-semibold px-8 py-3.5 rounded-xl hover:bg-white/10 hover:text-white transition-all text-sm"
           >
             <Icon name="Layers" size={16} />
-            Посмотреть функции
+            {t("View Features", "Посмотреть функции")}
           </a>
         </div>
 
