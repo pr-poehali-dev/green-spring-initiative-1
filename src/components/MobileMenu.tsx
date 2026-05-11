@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLang } from "@/context/LanguageContext";
 
 interface MobileMenuProps {
   className?: string;
@@ -9,12 +10,13 @@ interface MobileMenuProps {
 
 export const MobileMenu = ({ className }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { lang, toggle, t } = useLang();
 
   const menuItems = [
-    { name: "О нас", href: "#about" },
-    { name: "Портфолио", href: "#portfolio" },
-    { name: "Инсайты", href: "#insights" },
-    { name: "Контакты", href: "#contact" },
+    { en: "Features", ru: "Функции", href: "#features" },
+    { en: "Pricing", ru: "Цены", href: "#pricing" },
+    { en: "Installation", ru: "Установка", href: "#how" },
+    { en: "Contact", ru: "Контакты", href: "#contact" },
   ];
 
   const handleLinkClick = () => {
@@ -58,23 +60,29 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
           <nav className="flex flex-col space-y-6 container mx-auto">
             {menuItems.map((item) => (
               <a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 onClick={handleLinkClick}
                 className="text-xl font-mono uppercase text-foreground/60 transition-colors ease-out duration-150 hover:text-foreground/100 py-2"
               >
-                {item.name}
+                {t(item.en, item.ru)}
               </a>
             ))}
 
-            <div className="mt-6">
+            <div className="mt-6 flex items-center gap-4">
               <a
                 href="#sign-in"
                 onClick={handleLinkClick}
                 className="inline-block text-xl font-mono uppercase text-primary transition-colors ease-out duration-150 hover:text-primary/80 py-2"
               >
-                Войти
+                {t("Sign In", "Войти")}
               </a>
+              <button
+                onClick={toggle}
+                className="text-white/40 hover:text-white text-xs font-mono border border-white/15 hover:border-white/30 rounded-md px-2 py-1 transition-all duration-150"
+              >
+                {lang === "en" ? "RU" : "EN"}
+              </button>
             </div>
           </nav>
         </Dialog.Content>

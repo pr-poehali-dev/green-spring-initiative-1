@@ -1,7 +1,17 @@
 import { MobileMenu } from "./MobileMenu";
 import Icon from "./ui/icon";
+import { useLang } from "@/context/LanguageContext";
 
 export const Header = () => {
+  const { lang, toggle, t } = useLang();
+
+  const navItems = [
+    { labelEn: "Features", labelRu: "Функции", href: "#features" },
+    { labelEn: "Pricing", labelRu: "Цены", href: "#pricing" },
+    { labelEn: "Installation", labelRu: "Установка", href: "#how" },
+    { labelEn: "Contact", labelRu: "Контакты", href: "#contact" },
+  ];
+
   return (
     <div className="fixed z-50 top-0 left-0 w-full">
       <div className="mx-auto px-4 md:px-8 lg:px-12 py-4">
@@ -19,18 +29,13 @@ export const Header = () => {
 
           {/* Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {[
-              { label: "Функции", href: "#features" },
-              { label: "Цены", href: "#pricing" },
-              { label: "Установка", href: "#how" },
-              { label: "Контакты", href: "#contact" },
-            ].map((item) => (
+            {navItems.map((item) => (
               <a
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 className="text-white/50 hover:text-white text-sm transition-colors duration-150"
               >
-                {item.label}
+                {t(item.labelEn, item.labelRu)}
               </a>
             ))}
           </nav>
@@ -41,14 +46,20 @@ export const Header = () => {
               href="#register"
               className="text-white/50 hover:text-white text-sm transition-colors"
             >
-              Войти
+              {t("Sign In", "Войти")}
             </a>
             <a
               href="#register"
               className="bg-gradient-to-r from-violet-500 to-purple-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
             >
-              Регистрация
+              {t("Sign Up", "Регистрация")}
             </a>
+            <button
+              onClick={toggle}
+              className="text-white/40 hover:text-white text-xs font-mono border border-white/15 hover:border-white/30 rounded-md px-2 py-1 transition-all duration-150"
+            >
+              {lang === "en" ? "RU" : "EN"}
+            </button>
           </div>
 
           <MobileMenu />
