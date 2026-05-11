@@ -130,7 +130,7 @@ export function Hero() {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24 pb-20">
+      <div className="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24 pb-20">
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 max-w-4xl">
           <span
